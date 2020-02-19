@@ -1,0 +1,38 @@
+<h2>New Visit</h2>
+
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Birth Date</th>
+                    <th>Type</th>
+                    <th>Owner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="vacio">
+                    <td>{{pet.name}}</td>
+                    <td>{{pet.birthDate}}</td>
+                    <td>{{pet.type.name}}</td>
+                    <td>{{pet.owner.firstName}} {{pet.owner.lastName}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<form class="form-horizontal" #visit="ngForm" (ngSubmit)="anadeVisit(visita.value)">
+    <div class="form-group">
+        <label>Date</label>
+        <input type="Date" class="form-control" required [(ngModel)]="visita.visitDate" name="visitDate">
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" required [(ngModel)]="visita.description" name="description">
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Add new Visit</button>
+    </div>
+</form>

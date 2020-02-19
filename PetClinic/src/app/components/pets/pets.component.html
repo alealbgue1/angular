@@ -16,9 +16,12 @@
             <tr>
                 <td><button (click)="borrarPet(pet.id)">Del Pet</button>
                     <button routerLink="/formPet-mod/{{pet.id}}">Edit Pet</button>
-                    <button>Add Visits</button></td>
+                    <button routerLink="/formVisit/{{pet.id}}">Add Visits</button></td>
             </tr>
         </table>
     </div>
-    <app-visit [visits]="pet.visits"></app-visit>
+    <div class="col-6">
+        <app-visit [visits]="pet.visits"></app-visit>
+    </div>
+
 </div>

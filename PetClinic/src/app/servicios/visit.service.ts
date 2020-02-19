@@ -10,6 +10,21 @@ export class VisitService {
 
   private url = "http://localhost/AJAX/petClinic/API/petclinic/servicios.php";
 
-  
+  getDetallesPets(id){
+    var pa = JSON.stringify({
+      accion: "ObtenerPetId",
+      id: id
+    });
 
+    return this.http.post<any>(this.url, pa);
+  }
+
+  anadeVisit(visit){
+    var pa = JSON.stringify({
+      accion: "AnadeVisit",
+      visit: visit
+    });
+
+    return this.http.post<any>(this.url, pa);
+  }
 }
