@@ -1,0 +1,23 @@
+<form class="form-horizontal" #pet="ngForm" (ngSubmit)="anadePet(pet.value)">
+    <div class="form-group">
+        <label>Owner</label>
+        <input type="text" class="form-control" value="{{propietario.firstName}} {{propietario.lastName}}" readonly>
+    </div>
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" required [(ngModel)]="mascota.name" name="name">
+    </div>
+    <div class="form-group">
+        <label>Birth Date</label>
+        <input type="Date" class="form-control" required [(ngModel)]="mascota.birthDate" name="birth_date">
+    </div>
+    <div class="form-group">
+        <label>Type</label>
+        <select class="form-control" [(ngModel)]="mascota.type" name="type">
+            <option *ngFor="let type of mascotaType" [ngValue]="type">{{type.name}}</option> <!-- value="{{type.id}}" -->
+        </select>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">{{textoBoton}} pet</button>
+    </div>
+</form>

@@ -1,0 +1,17 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date: </th>
+            <th>Description: </th>
+            <th>Acción: </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let visit of visits">
+            <td>{{visit.visitDate}}</td>
+            <td>{{visit.description}}</td>
+            <td><button>Del</button>
+                <button>Edit</button></td>
+        </tr>
+    </tbody>
+</table>

@@ -10,6 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { OwnerDetallesComponent } from './components/owner-detalles/owner-detalles.component';
 import { FormOwnerComponent } from './components/form-owner/form-owner.component';
 import { FormsModule } from "@angular/forms";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { PetsComponent } from './components/pets/pets.component';
+import { FormPetComponent } from './components/form-pet/form-pet.component';
+import { VisitComponent } from './components/visit/visit.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,17 @@ import { FormsModule } from "@angular/forms";
     OwnersComponent,
     VetsComponent,
     OwnerDetallesComponent,
-    FormOwnerComponent
+    FormOwnerComponent,
+    PetsComponent,
+    FormPetComponent,
+    VisitComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

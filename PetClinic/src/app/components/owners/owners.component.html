@@ -1,7 +1,8 @@
 <h2>Owners:</h2>
 
-<button routerLink="/form">Añadir Owner</button>
+<button routerLink="/form/-1">Añadir Owner</button>
 <ul>
     <li *ngFor="let ow of arrOwners">
-        <a routerLink="/detalles-owner/{{ow.id}}">{{ow.firstName}} {{ow.lastName}} - {{ow.city}}</a></li>
+        <a routerLink="/detalles-owner/{{ow.id}}">{{ow.firstName}} {{ow.lastName}} - {{ow.city}}</a>
+    </li>
 </ul>

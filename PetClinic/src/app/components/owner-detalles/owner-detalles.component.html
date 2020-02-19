@@ -17,8 +17,14 @@
         <th>Telephone:</th>
         <td>{{owner.telephone}}</td>
     </tr>
-    <tr *ngIf="owner.pets">
-        <th>Pets:</th>
-        <td>{{owner.pets}}</td>
-    </tr>
 </table>
+
+<button routerLink="/owners"><-- Back</button>
+<button (click)="borrar(owner)">Del Owner</button>
+<button routerLink="/form/{{owner.id}}">Edit Owner</button>
+<button routerLink="/formPet/{{owner.id}}">Add new Pet</button>
+
+<div>
+    <h3>Pets and Visits</h3>
+    <app-pets *ngFor="let pet of owner.pets" [pet]="pet" (eliminado)="actualizaBorrar($event)"></app-pets>
+</div>

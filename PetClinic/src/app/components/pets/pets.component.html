@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-6">
+        <table class="table">
+            <tr>
+                <th>Name: </th>
+                <td>{{pet.name}}</td>
+            </tr>
+            <tr>
+                <th>Birth Date: </th>
+                <td>{{pet.birthDate}}</td>
+            </tr>
+            <tr>
+                <th>Type: </th>
+                <td>{{pet.typeName}}</td>
+            </tr>
+            <tr>
+                <td><button (click)="borrarPet(pet.id)">Del Pet</button>
+                    <button routerLink="/formPet-mod/{{pet.id}}">Edit Pet</button>
+                    <button>Add Visits</button></td>
+            </tr>
+        </table>
+    </div>
+    <app-visit [visits]="pet.visits"></app-visit>
+</div>
