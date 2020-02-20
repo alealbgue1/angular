@@ -3,6 +3,7 @@ import { PetService } from 'src/app/servicios/pet.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pet } from 'src/app/models/pet';
 import { Owners } from 'src/app/models/owners';
+import { VisitService } from 'src/app/servicios/visit.service';
 
 @Component({
   selector: 'app-pets',
@@ -15,20 +16,22 @@ export class PetsComponent implements OnInit {
 
   @Output() eliminado = new EventEmitter();
 
-  //private mascota: Pet;
+  private idOwnerGlobal: number;
 
   private propietario: Owners;
   
 
-  constructor(private servicioPets: PetService, private route: ActivatedRoute, private ruta: Router ) {
+  constructor(private servicioPets: PetService, private servicioVisit: VisitService, private route: ActivatedRoute, private ruta: Router ) {
    }
 
   ngOnInit() {
     const id = this.route.snapshot.params["id"];
 
+    this.idOwnerGlobal = id;
+
     /*this.servicioPets.listarPet(id).subscribe(datos=>{
       console.log(datos);
-      this.mascota = datos;
+      this.pet = datos;
     })*/
   }
 
@@ -39,6 +42,18 @@ export class PetsComponent implements OnInit {
         console.log(datos);
         this.eliminado.emit(datos);
       });
+    }
+  }
+
+  actualizaBorrar(datos){
+
+    if(datos.result == "OK"){
+      alert("VISIT eliminada con éxito");
+      this.servicioPets.listarVisitPet(this.pet.id).subscribe(datos =>{
+        console.log("Borrar datos", datos);
+        this.pet.visits = datos;
+        console.log("Detalles pet", this.pet);
+      })
     }
   }
 

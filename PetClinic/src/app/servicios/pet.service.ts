@@ -20,6 +20,15 @@ export class PetService {
     return this.http.post<any>(this.url, pa);
   }
 
+  listarVisitPet(id){
+    var pa = JSON.stringify({
+      accion: "ListarVisitasPet",
+      id: id
+    });
+
+    return this.http.post<any>(this.url, pa);
+  }
+
   getDetallesPets(id){
     var pa = JSON.stringify({
       accion: "ObtenerPetId",
