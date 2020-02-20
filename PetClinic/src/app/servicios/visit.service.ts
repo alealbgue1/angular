@@ -19,9 +19,36 @@ export class VisitService {
     return this.http.post<any>(this.url, pa);
   }
 
+  getDetallesVisit(id){
+    var pa = JSON.stringify({
+      accion: "ObtenerVisitId",
+      id: id
+    });
+
+    return this.http.post<any>(this.url, pa);
+  }
+
+  borrarVisit(id){
+    var pa = JSON.stringify({
+      accion: "BorraVisit",
+      id: id
+    });
+
+    return this.http.post<any>(this.url, pa);
+  }
+
   anadeVisit(visit){
     var pa = JSON.stringify({
       accion: "AnadeVisit",
+      visit: visit
+    });
+
+    return this.http.post<any>(this.url, pa);
+  }
+
+  modVisit(visit){
+    var pa = JSON.stringify({
+      accion: "ModificaVisit",
       visit: visit
     });
 

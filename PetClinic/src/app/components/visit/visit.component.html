@@ -10,8 +10,8 @@
         <tr *ngFor="let visit of visits">
             <td>{{visit.visitDate | date:"dd-MM-yyyy"}}</td>
             <td>{{visit.description}}</td>
-            <td><button>Del</button>
-                <button>Edit</button></td>
+            <td><button (click)="borrarVisit(visit.id)">Del</button>
+                <button routerLink="/formVisit-mod/{{visit.id}}">Edit</button></td>
         </tr>
     </tbody>
 </table>
