@@ -1,0 +1,38 @@
+<h2>LISTA DE ALUMN@S</h2>
+
+<button routerLink="/form-add/-1" [disabled]="del">Añadir alumno</button>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>APELLIDOS</th>
+            <th>SEXO</th>
+            <th>FECHA_NACIMIENTO</th>
+            <th>ESTADO_CIVIL</th>
+            <th>ACCIÓN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let al of arrayAlumno">
+            <td>{{al.ID}}</td>
+            <td>{{al.NOMBRE}}</td>
+            <td>{{al.APELLIDOS}}</td>
+            <td>{{al.SEXO_NOMBRE}}</td>
+            <td>{{al.FECHA_NACIMIENTO | date:"dd-MM-yyyy"}}</td>
+            <td>{{al.NOMBRE_EC}}</td>
+            <td><button routerLink="/form-add/{{al.ID}}" [disabled]="del">Mod</button>
+                <button (click)="borrarAlumno(al)" [disabled]="del">Del</button>
+            </td>
+
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Total de {{numAl}} ALUMN@S</td>
+        </tr>
+    </tfoot>
+</table>
+
+<app-alumno-del *ngIf="del" [alumnosDel]="arrayBorrar" (eliminado)="actualizaBorrar($event)"></app-alumno-del>

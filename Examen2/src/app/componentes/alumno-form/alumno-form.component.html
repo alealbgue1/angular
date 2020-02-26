@@ -1,0 +1,39 @@
+<h2>{{textoBoton}} ALUMN@</h2>
+
+<form #alumnos="ngForm" (ngSubmit)="anadeOrMod(alumnos.value)">
+    <fieldset>
+        <div>
+            <label>NOMBRE</label>
+            <input type="text" required [(ngModel)]="alumno.NOMBRE" name="NOMBRE">
+        </div>
+
+        <div>
+            <label>APELLIDOS</label>
+            <input type="text" required [(ngModel)]="alumno.APELLIDOS" name="APELLIDOS">
+        </div>
+
+        <div>
+            <label>SEXO</label>
+            <select [(ngModel)]="alumno.SEXO" name="SEXO" required>
+                <option *ngFor="let sexo of arraySexo" [ngValue]="sexo.CODIGO">{{sexo.NOMBRE}}</option>
+            </select>
+        </div>
+
+        <div>
+            <label>FECHA DE NACIMIENTO</label>
+            <input type="Date" required [(ngModel)]="alumno.FECHA_NACIMIENTO" name="FECHA_NACIMIENTO">
+        </div>
+
+        <div>
+            <label>ESTADO CIVIL</label>
+            <select [(ngModel)]="alumno.ESTADO_CIVIL" name="ESTADO_CIVIL" required>
+                <option *ngFor="let ec of arrayEC" [ngValue]="ec.ID" selected>{{ec.NOMBRE}}</option>
+            </select>
+        </div>
+
+        <div>
+            <button type="submit" [disabled]="!alumnos.valid">{{textoBoton}} Alumn@</button>
+            <button routerLink="/alumnos">Cancelar</button>
+        </div>
+    </fieldset>
+</form>

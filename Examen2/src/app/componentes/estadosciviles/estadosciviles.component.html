@@ -1,0 +1,21 @@
+<h2>ESTADOS CIVILES</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ec of arrayEC">
+            <td>{{ec.ID}}</td>
+            <td>{{ec.NOMBRE}}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Total {{numEC}} estados civiles</td>
+        </tr>
+    </tfoot>
+</table>

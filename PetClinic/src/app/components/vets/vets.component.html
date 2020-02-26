@@ -1,5 +1,23 @@
 <h3>Vets</h3>
 
-<ul>
-    <li *ngFor="let vet of arrVets">{{vet.firstName}} {{vet.lastName}}</li>
-</ul>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Specialty</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vet of arrVets">
+                    <td>{{vet.firstName}} {{vet.lastName}}</td>
+                    <td>Specialty</td>
+                    <td><button>Mod</button>
+                        <button>Del</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
