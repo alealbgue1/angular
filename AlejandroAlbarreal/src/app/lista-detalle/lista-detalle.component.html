@@ -1,0 +1,69 @@
+<h1>Gestión de Facturas</h1>
+
+<h3>Detalle de la factura: {{num}} </h3>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>CANTIDAD</th>
+            <th>CONCEPTO</th>
+            <th>PRECIO</th>
+            <th>Tipo IVA</th>
+            <th>IVA</th>
+            <th>TOTAL</th>
+            <th>Modificar</th>
+            <th>Borrar</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let detalles of listaDetalles">
+            <td>{{detalles.id}}</td>
+            <td>{{detalles.cantidad}}</td>
+            <td>{{detalles.concepto}}</td>
+            <td>{{detalles.precio}}</td>
+            <td>{{detalles.tipo_iva}}</td>
+            <td>{{detalles.precio*detalles.cantidad*(detalles.tipo_iva / 100) | number}}</td>
+            <td>{{(detalles.precio*detalles.cantidad*(detalles.tipo_iva / 100))+detalles.cantidad*detalles.precio | number}}</td>
+            <td><button (click)="llamaditaMod(detalles)">Modificar</button></td>
+            <td><button (click)="borrar(detalles)">Borrar</button></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">TOTALES: </td>
+            <td>suma iva</td>
+            <td>suma TOTAL</td>
+        </tr>
+    </tfoot>
+</table>
+<p>
+    <button><a routerLink="/">Volver</a></button>
+    <button (click)="llamaditaAnade()">Nuevo detalle</button>
+</p>
+
+<form *ngIf="muestraForm">
+    <fieldset>
+        <legend>{{texto}} detalle</legend>
+        <p>
+            <label>Cantidad: </label>
+            <input type="text" name="cantidad" [(ngModel)]="cantidad" />
+        </p>
+        <p>
+            <label>Concepto: </label>
+            <input type="text" name="concepto" [(ngModel)]="concepto" />
+        </p>
+        <p>
+            <label>Precio: </label>
+            <input type="text" name="precio" [(ngModel)]="precio" /> €
+        </p>
+        <p>
+            <label>Tipo IVA: </label>
+            <input type="text" name="tipo_iva" [(ngModel)]="tipo_iva" /> %
+        </p>
+
+    </fieldset>
+
+    <button (click)="anadeOMod()">{{texto}} línea de detalle</button>
+
+</form>
