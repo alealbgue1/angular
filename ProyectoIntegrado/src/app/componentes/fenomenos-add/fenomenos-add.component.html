@@ -1,0 +1,53 @@
+<div>
+    <h4>{{texto}} fenómeno</h4>
+
+    <form class="form-horizontal" #fenomenosForm="ngForm">
+        <div class="form-group">
+            <label>NOMBRE: </label>
+            <input type="text" class="form-control" required [(ngModel)]="fenomenos.nombre" name="nombre" #nombre="ngModel">
+            <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+                El Nombre es obligatorio
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>LUGAR: </label>
+            <input type="text" class="form-control" required [(ngModel)]="fenomenos.lugar" name="lugar" #lugar="ngModel">
+            <div [hidden]="lugar.valid || lugar.pristine" class="alert alert-danger">
+                Los lugares son obligatorios
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>FECHA: </label>
+            <input type="date" class="form-control" required [(ngModel)]="fenomenos.fecha" name="fecha" #fecha="ngModel">
+            <div [hidden]="fecha.valid || fecha.pristine" class="alert alert-danger">
+                Los fecha son obligatorios
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>DESCRIPCION: </label>
+            <input type="text" class="form-control" required [(ngModel)]="fenomenos.descripcion" name="descripcion" #descripcion="ngModel">
+            <div [hidden]="descripcion.valid || descripcion.pristine" class="alert alert-danger">
+                Los descripcion son obligatorios
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>TIPO: </label>
+            <input type="text" class="form-control" required [(ngModel)]="fenomenos.tipo" name="tipo" #tipo="ngModel">
+            <div [hidden]="tipo.valid || tipo.pristine" class="alert alert-danger">
+                Los tipo son obligatorios
+            </div>
+        </div>
+
+        <div>
+            <button class="btn btn-primary mr-3" type="button" [disabled]="!fenomenosForm.valid" (click)="validar(fenomenosForm.value)">
+				{{texto}}
+			</button>
+        </div>
+
+    </form>
+
+</div>

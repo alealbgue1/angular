@@ -1,0 +1,28 @@
+<div class="container mt-2">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>LUGAR</th>
+                <th>FECHA</th>
+                <th>DESCRIPCIÓN</th>
+                <th>TIPO</th>
+                <th>ACCIÓN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of sucesos">
+                <td>{{s.id}}</td>
+                <td>{{s.nombre}}</td>
+                <td>{{s.lugar}}</td>
+                <td>{{s.fecha}}</td>
+                <td>{{s.descripcion}}</td>
+                <td>{{s.tipo}}</td>
+                <td><button routerLink="/fenomenos-form/{{s.id}}">Mod</button>
+                    <button (click)="borrar(s.id)">Del</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
