@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { InicioComponent } from "./componentes/inicio/inicio.component";
 import { LoginComponent } from "./componentes/login/login.component";
-import { PersonasListadoComponent } from "./componentes/personas-listado/personas-listado.component";
-import { PersonasAnadeComponent } from "./componentes/personas-anade/personas-anade.component";
 import { FenomenosListarComponent } from './componentes/fenomenos-listar/fenomenos-listar.component';
 import { FenomenosAddComponent } from './componentes/fenomenos-add/fenomenos-add.component';
+import { InvestigadorListadoComponent } from './componentes/investigador-listado/investigador-listado.component';
+import { InvestigadorAnadeComponent } from './componentes/investigador-anade/investigador-anade.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
 
 
 const routes: Routes = [
@@ -30,13 +31,19 @@ const routes: Routes = [
 	},
 
 	/*{
-		path: "personas-listar",
-		component: PersonasListadoComponent
+		path:"investigadores-listar",
+		component: InvestigadorListadoComponent
 	},
+
 	{
-		path: "personas-add",
-		component: PersonasAnadeComponent
+		path:"investigadores-form/:id",
+		component: InvestigadorAnadeComponent
 	},*/
+	{
+		path:"registro",
+		component: RegistroComponent
+	},
+
 
 	//  Para que cuando se coloque una ruta incorrecta de forma manual en la url, vaya a donde queramos.
 	//  También se puede crear un component: pagina NOT Found y que vaya a esa página

@@ -1,0 +1,22 @@
+<div class="container mt-2">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>APELLIDOS</th>
+                <th>ACCIÓN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of listaInv">
+                <td>{{p.id}}</td>
+                <td>{{p.nombre}}</td>
+                <td>{{p.apellidos}}</td>
+                <td><button routerLink="/investigadores-form/{{p.id}}">Mod</button>
+                    <button (click)="borrar(p.id)">Del</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

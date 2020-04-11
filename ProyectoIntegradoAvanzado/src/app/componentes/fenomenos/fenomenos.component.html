@@ -1,0 +1,33 @@
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>ID:</th>
+            <td>{{fenomeno.id}}</td>
+        </tr>
+        <tr>
+            <th>Nombre:</th>
+            <td>{{fenomeno.nombres}}</td>
+        </tr>
+        <tr>
+            <th>Lugar:</th>
+            <td>{{fenomeno.lugar}}</td>
+        </tr>
+        <tr>
+            <th>Fecha:</th>
+            <td>{{fenomeno.fecha}}</td>
+        </tr>
+        <tr>
+            <th>Tipo:</th>
+            <td>{{fenomeno.name}}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>{{fenomeno.descripcion}}</td>
+        </tr>
+        <tr>
+            <th>ACCIÓN</th>
+            <td><button (click)="borrar(fenomeno.id)">Del Fenómeno</button>
+                <button routerLink="/fenomenos-mod/{{fenomeno.id}}">Edit Fenómeno</button></td>
+        </tr>
+    </table>
+</div>

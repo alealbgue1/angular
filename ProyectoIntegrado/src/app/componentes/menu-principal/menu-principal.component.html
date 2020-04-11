@@ -11,14 +11,18 @@
         <div class="navbar-nav">
             <a class="nav-item nav-link active" routerLink="/" routerLinkActive="active">Inicio <span class="sr-only">(current)</span></a>
 
+            <a class="nav-item nav-link" *ngIf="!navBar.login" routerLink="/fenomenos-listar" style="cursor: pointer;" (click)="navBar.sucesos.dropdown = !navBar.sucesos.dropdown" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                fenómenos
+            </a>
+
             <li *ngIf="navBar.login" class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" style="cursor: pointer;" (click)="navBar.personas.dropdown = !navBar.personas.dropdown" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" style="cursor: pointer;" (click)="navBar.sucesos.dropdown = !navBar.sucesos.dropdown" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							fenómenos
 						</a>
-                <div [ngbCollapse]="navBar.personas.dropdown" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" routerLink="/fenomenos-listar" routerLinkActive="active" (click)="navBar.personas.dropdown = !navBar.personas.dropdown">
+                <div [ngbCollapse]="navBar.sucesos.dropdown" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" routerLink="/fenomenos-listar" (click)="navBar.sucesos.dropdown = !navBar.sucesos.dropdown" routerLinkActive="active">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span><span>Todas</span></a>
-                    <a class="dropdown-item" routerLink="/fenomenos-form/-1" routerLinkActive="active" (click)="navBar.personas.dropdown = !navBar.personas.dropdown">Añadir nueva</a>
+                    <a class="dropdown-item" routerLink="/fenomenos-form/-1" (click)="navBar.sucesos.dropdown = !navBar.sucesos.dropdown" routerLinkActive="active">Añadir nueva</a>
                 </div>
             </li>
 

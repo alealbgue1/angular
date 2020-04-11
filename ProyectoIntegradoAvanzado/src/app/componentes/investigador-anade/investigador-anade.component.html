@@ -1,0 +1,47 @@
+<div>
+    <h4>{{texto}} investigador/a</h4>
+
+    <form class="form-horizontal" #invForm="ngForm">
+        <div class="form-group">
+            <label>NOMBRE: </label>
+            <input type="text" class="form-control" required [(ngModel)]="inv.nombre" name="nombre" #nombre="ngModel">
+            <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+                El Nombre es obligatorio
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>APELLIDOS: </label>
+            <input type="text" class="form-control" required [(ngModel)]="inv.apellidos" name="apellidos" #apellidos="ngModel">
+            <div [hidden]="apellidos.valid || apellidos.pristine" class="alert alert-danger">
+                Los Apellidos son obligatorios
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email: </label>
+            <input type="text" class="form-control" required [(ngModel)]="inv.email" name="email" #email="ngModel">
+            <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                El correo es obligatorio
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Clave: </label>
+            <input type="password" class="form-control" required [(ngModel)]="inv.clave" name="clave" #clave="ngModel">
+            <div [hidden]="clave.valid || clave.pristine" class="alert alert-danger">
+                La clave es obligatoria
+            </div>
+        </div>
+
+        <div>
+            <button class="btn btn-primary mr-3" type="button" [disabled]="!invForm.valid" (click)="validar(invForm.value)">
+				{{texto}}
+            </button>
+
+            <button class="btn btn-primary mr-3" type="button" routerLink="/investigadores-listar">
+                Volver
+            </button>
+        </div>
+
+    </form>
+
+</div>

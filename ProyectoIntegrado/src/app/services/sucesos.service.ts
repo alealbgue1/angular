@@ -17,14 +17,14 @@ export class SucesosService {
 		  servicio: "getId",
 		  id: id
 		});
-		return this.http.post<any>(this.url, pa, environment.cabecera());
+		return this.http.post<any>(this.url, pa);
 	  }
 
 	listar(){
 		let pa = JSON.stringify({
 			servicio: "listar"
 		});
-		return this.http.post<any>(this.url, pa, environment.cabecera());
+		return this.http.post<any>(this.url, pa);
 	}
 
 	anadir(fenomenos){
@@ -32,14 +32,14 @@ export class SucesosService {
 		let pa = JSON.parse(JSON.stringify(fenomenos));
 		//  Le añadimos el nuevo atributo, servicio:
 		pa.servicio = "insertar";
-		return this.http.post<any>(this.url, JSON.stringify(pa), environment.cabecera());
+		return this.http.post<any>(this.url, JSON.stringify(pa));
 	}
 
 	modificar(fenomenos){
 		let pa = JSON.parse(JSON.stringify(fenomenos));
 		//  Le añadimos el nuevo atributo, servicio:
 		pa.servicio = "modificar";
-		return this.http.post<any>(this.url, JSON.stringify(pa), environment.cabecera());
+		return this.http.post<any>(this.url, JSON.stringify(pa));
 	}
 
 	borrar(id){
@@ -47,6 +47,6 @@ export class SucesosService {
 			servicio: "borrar",
 			id: id
 		});
-		return this.http.post<any>(this.url, pa, environment.cabecera());
+		return this.http.post<any>(this.url, pa);
 	}
 }

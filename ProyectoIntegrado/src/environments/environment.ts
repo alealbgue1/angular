@@ -8,10 +8,12 @@ export const environment = {
   production: false,
 
 	//API_URL_Login: "http://localhost/AJAX/LISTA_PERSONAS/LOGIN/Angular/login.php",
-	API_URL_Login: "http://localhost/ProyectoIntegrado/Login/login.php",
+	API_URL_Login: "http://localhost/ProyectoIntegrado/basico/login.php",
   
 	//API_URL: "http://localhost/AJAX/LISTA_PERSONAS/LOGIN/Angular/servidor.php",
-	API_URL: "http://localhost/ProyectoIntegrado/Login/servidor.php",
+	API_URL: "http://localhost/ProyectoIntegrado/basico/servidor.php",
+
+	API_URL2: "http://localhost/ProyectoIntegrado/basico/services.php",
 
 	cabecera: function(){
 		let headers = { headers: new HttpHeaders({

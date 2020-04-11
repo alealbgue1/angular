@@ -18,7 +18,7 @@ export class FenomenosAddComponent implements OnInit {
   private texto: string;
 
 	constructor(private servicioSucesos: SucesosService , private servicioUpdateMenu: UpdateMenuService, 
-									private ruta: Router, private servicioLogin: LoginService, private route: ActivatedRoute) {
+									private ruta: Router, private route: ActivatedRoute) {
 		this.fenomenos = {id: -1, nombre:"", lugar:"", fecha: Date, descripcion:"", tipo:""}
 	 }
 

@@ -1,0 +1,64 @@
+<h4>
+    Registro
+</h4>
+<div>
+
+    <form class="form-horizontal" #registroForm="ngForm" (submit)="registrarse(registroForm.value)">
+
+        <div class="form-group">
+            <label>Nombre: </label>
+            <input type="text" class="form-control" required [(ngModel)]="registro.nombre" name="nombre" #nombre="ngModel">
+            <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+                El nombre es obligatorio
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Apellidos: </label>
+            <input type="text" class="form-control" required [(ngModel)]="registro.apellidos" name="apellidos" #apellidos="ngModel">
+        </div>
+
+        <div class="form-group">
+            <label>Email: </label>
+            <input type="email" class="form-control" required [(ngModel)]="registro.email" name="email" #email="ngModel" (blur)="checkEmail(email.value)">
+            <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                El correo es obligatorio
+            </div>
+            <div [hidden]="!checkCorreo" class="alert alert-info">
+                Comprobando correo ...
+            </div>
+            <div [hidden]="correoCorrecto" class="alert alert-danger">
+                Ese correo está en uso
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Clave: </label>
+            <input type="text" class="form-control" required [(ngModel)]="registro.clave" name="clave" #clave="ngModel" minlength="3">
+            <div [hidden]="clave.valid || clave.pristine" class="alert alert-danger">
+                Mínimo 3 caracteres.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Repetir clave: </label>
+            <input type="text" class="form-control" required [(ngModel)]="registro.clave2" name="clave2" #clave2="ngModel" minlength="3">
+            <div [hidden]="clave.value == clave2.value" class="alert alert-danger">
+                Las claves deben ser iguales
+            </div>
+        </div>
+
+
+        <div>
+            <button class="btn btn-primary mr-3" type="submit" [disabled]="!registroForm.valid || clave.value != clave2.value || !correoCorrecto">
+                  Registrarse
+              </button>
+        </div>
+
+    </form>
+
+    <p>
+        Form Status: {{ registroForm.status }}
+    </p>
+
+</div>

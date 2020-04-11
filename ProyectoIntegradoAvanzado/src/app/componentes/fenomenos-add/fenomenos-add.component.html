@@ -1,0 +1,54 @@
+<div>
+    <h4>{{texto}} fenómeno</h4>
+
+    <form class="form-horizontal" #fenomenosForm="ngForm">
+        <div class="form-group">
+            <label>NOMBRE: </label>
+            <input type="text" class="form-control" required [(ngModel)]="fenomenos.nombres" name="nombres" #nombre="ngModel">
+            <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+                El Nombre es obligatorio
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>LUGAR: </label>
+            <input type="text" class="form-control" required [(ngModel)]="fenomenos.lugar" name="lugar" #lugar="ngModel">
+            <div [hidden]="lugar.valid || lugar.pristine" class="alert alert-danger">
+                Los lugares son obligatorios
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>FECHA: </label>
+            <input type="date" class="form-control" required [(ngModel)]="fenomenos.fecha" name="fecha" #fecha="ngModel">
+            <div [hidden]="fecha.valid || fecha.pristine" class="alert alert-danger">
+                Los fecha son obligatorios
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>DESCRIPCION: </label>
+            <input type="text" class="form-control" required [(ngModel)]="fenomenos.descripcion" name="descripcion" #descripcion="ngModel">
+            <div [hidden]="descripcion.valid || descripcion.pristine" class="alert alert-danger">
+                Los descripcion son obligatorios
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>TIPOS</label>
+            <select class="form-control" [(ngModel)]="fenomenos.tipos" name="tipos" #tipos="ngModel" required>
+                <option *ngFor="let t of types" [ngValue]="t" selected>{{t.name}}</option>
+            </select>
+        </div>
+
+
+        <div>
+            <button class="btn btn-primary mr-3" type="button" [disabled]="!fenomenosForm.valid" (click)="validar(fenomenosForm.value)">
+				{{texto}}
+            </button>
+            <button class="btn btn-primary mr-3" routerLink="/investigadores-detalles/{{investigadores.id}}">Volver</button>
+        </div>
+
+    </form>
+
+</div>

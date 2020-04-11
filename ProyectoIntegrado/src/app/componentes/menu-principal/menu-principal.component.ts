@@ -13,12 +13,14 @@ export class MenuPrincipalComponent implements OnInit {
 
 	public navBar = {
 		isNavbarCollapsed: true,
-		personas: {
+		sucesos: {
 			dropdown: true
 		},
 		login: false,
-		usuario: ""
+		usuario: "" 
 	}
+
+
 	private resLogin$: Observable<any>;
 
   constructor(private servicioLogin: LoginService, private servicioUpdateMenu: UpdateMenuService, private ruta: Router) {

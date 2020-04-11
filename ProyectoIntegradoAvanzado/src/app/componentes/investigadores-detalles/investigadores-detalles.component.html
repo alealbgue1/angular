@@ -1,0 +1,30 @@
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NOMBRE</th>
+                <th>APELLIDOS</th>
+                <th>EMAIL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{arrInv.nombre}}</td>
+                <td>{{arrInv.apellidos}}</td>
+                <td>{{arrInv.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <button routerLink="/investigadores-listar"><-- Back</button>
+    <button>Del Investigador/a</button>
+    <button>Edit Investigador/a</button>
+    <button routerLink="/fenomenos-add/{{arrInv.id}}">Add new Fenomenos</button>
+</div>
+
+<div>
+    <h4>Sucesos paranormales</h4>
+    <app-fenomenos *ngFor="let fenomeno of arrInv.fenomenos" [fenomeno]="fenomeno" (eliminado)="actualizaBorrar($event)"></app-fenomenos>
+</div>
