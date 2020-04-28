@@ -1,0 +1,16 @@
+<div class="principal">
+    <h2>Eliminar INVESTIGADOR/A</h2>
+    <p>Para eliminar a {{invDel.nombre}} {{invDel.apellidos}} necesitas introducir la clave secreta</p>
+    <form>
+        <input type="password" class="form-control" name="clave" required [(ngModel)]="clave">
+        <button [hidden]="boolean" (click)="check(clave.value)">Comprobar</button>
+
+        <div [hidden]="!boolean">
+            La clave es correcta
+        </div>
+        <br>
+        <br>
+        <button (click)="borrar()" [disabled]="!boolean">Aceptar</button>
+        <button (click)="cancelar()">Cancelar</button>
+    </form>
+</div>

@@ -1,28 +1,24 @@
-<div class="container mt-2">
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NOMBRE</th>
-                <th>LUGAR</th>
-                <th>FECHA</th>
-                <th>DESCRIPCIÓN</th>
-                <th>TIPO</th>
-                <th *ngIf="navBar.login">ACCIÓN</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let s of sucesos">
-                <td>{{s.id}}</td>
-                <td>{{s.nombre}}</td>
-                <td>{{s.lugar}}</td>
-                <td>{{s.fecha}}</td>
-                <td>{{s.descripcion}}</td>
-                <td>{{s.tipo}}</td>
-                <td *ngIf="navBar.login"><button routerLink="/fenomenos-form/{{s.id}}">Mod</button>
-                    <button (click)="borrar(s.id)">Del</button></td>
-            </tr>
-        </tbody>
-
-    </table>
+<div id="contenido" class="container mt-2">
+    <div class="fenomenos" *ngFor="let s of fenomenos">
+        <h2>{{s.nombres}}</h2>
+        <p>LUGAR: {{s.lugar}}</p>
+        <p>FECHA: {{s.fecha}}</p>
+        <p>DESCRIPCIÓN: {{s.descripcion}}</p>
+    </div>
 </div>
+
+<aside>
+    <nav>
+        <h2>Menú</h2>
+        <ul>
+            <li>
+                <figure></figure><a href="index.html">Home</a></li>
+            <li>
+                <figure></figure><a href="https://www.sevilla.abc.es" target="_blank">Noticias</a></li>
+            <li>
+                <figure></figure><a href="https://www.cuatro.com/cuarto-milenio/fenomenos-paranormales/3013517/">Videos</a></li>
+            <li>
+                <figure></figure><a href="#">Información</a></li>
+        </ul>
+    </nav>
+</aside>

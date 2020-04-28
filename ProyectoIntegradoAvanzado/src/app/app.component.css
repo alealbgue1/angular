@@ -1,0 +1,16 @@
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(66, 60, 60);
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    float: left;
+    margin-left: 2em;
+    padding-top: 1em;
+    padding-bottom: 5px;
+}

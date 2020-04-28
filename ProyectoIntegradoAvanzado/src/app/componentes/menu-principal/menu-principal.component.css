@@ -1,0 +1,10 @@
+.cabecera {
+    background-image: url(../../../assets/tenor.gif);
+    background-size: 55px 55px;
+    padding: 4em;
+    color: white;
+}
+
+.menu {
+    background-color: yellow;
+}

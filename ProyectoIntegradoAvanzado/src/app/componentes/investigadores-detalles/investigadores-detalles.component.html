@@ -1,30 +1,37 @@
-<div class="row">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>NOMBRE</th>
-                <th>APELLIDOS</th>
-                <th>EMAIL</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{arrInv.nombre}}</td>
-                <td>{{arrInv.apellidos}}</td>
-                <td>{{arrInv.email}}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="body">
+    <div class="contenido">
+        <div class="table-responsive">
+            <table class="table table-sm table-dark table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">APELLIDOS</th>
+                        <th scope="col">EMAIL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-light">
+                        <td>{{arrInv.nombre}}</td>
+                        <td>{{arrInv.apellidos}}</td>
+                        <td>{{arrInv.email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="boton">
+            <button routerLink="/investigadores-listar"><-- Back</button>
+            <button (click)="borrarInv(arrInv)">Del Investigador/a</button>
+            <button (click)="modInv(arrInv)">Edit Investigador/a</button>
+            <button routerLink="/fenomenos-add/{{arrInv.id}}">Add new Fenomenos</button>
+        </div>
+
+        <h1><b>Fenómenos paranormales</b>
+        </h1>
+        <app-fenomenos *ngFor="let fenomeno of arrInv.fenomenos" [fenomeno]="fenomeno" (eliminado)="actualizaBorrar($event)"></app-fenomenos>
+    </div>
 </div>
 
-<div>
-    <button routerLink="/investigadores-listar"><-- Back</button>
-    <button>Del Investigador/a</button>
-    <button>Edit Investigador/a</button>
-    <button routerLink="/fenomenos-add/{{arrInv.id}}">Add new Fenomenos</button>
-</div>
+<app-investigador-borrar *ngIf="del" [invDel]="investigador" (eliminado)="actualizarBorrar($event)"></app-investigador-borrar>
 
-<div>
-    <h4>Sucesos paranormales</h4>
-    <app-fenomenos *ngFor="let fenomeno of arrInv.fenomenos" [fenomeno]="fenomeno" (eliminado)="actualizaBorrar($event)"></app-fenomenos>
-</div>
+<app-investigador-mod *ngIf="mod" [invMod]="investigador" (modificado)="actualizarModificar($event)"></app-investigador-mod>

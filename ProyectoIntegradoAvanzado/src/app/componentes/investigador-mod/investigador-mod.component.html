@@ -1,0 +1,45 @@
+<div class="principal">
+
+    <form [hidden]="boolean">
+        <h2>MODIFICAR INVESTIGADOR/A</h2>
+        <p>Para modificar los datos debes introducir la contraseña secreta</p>
+        <input type="password" class="form-control" name="contrasena" required [(ngModel)]="contrasena">
+        <button [hidden]="boolean" (click)="check(contrasena.value)">Comprobar</button>
+    </form>
+
+    <form [hidden]="!boolean" #invForm="ngForm">
+        <div>
+            <label>Nombre:</label>
+            <input type="text" required [(ngModel)]="invMod.nombre" name="nombre" #nombre="ngModel">
+            <div [hidden]="nombre.valid || nombre.pristine">
+                El nombre es obligatorio
+            </div>
+        </div>
+
+        <div>
+            <label>Apellidos:</label>
+            <input type="text" required [(ngModel)]="invMod.apellidos" name="apellidos" #apellidos="ngModel">
+            <div [hidden]="apellidos.valid || apellidos.pristine">
+                Los apellidos es obligatorio
+            </div>
+        </div>
+
+        <div>
+            <label>Email:</label>
+            <input type="text" required [(ngModel)]="invMod.email" name="email" #email="ngModel">
+            <div [hidden]="email.valid || email.pristine">
+                El email es obligatorio
+            </div>
+        </div>
+
+        <div>
+            <button class="btn btn-primary mr-3" type="button" [disabled]="!invForm.valid" (click)="validar(invForm.value)">
+				Modificar
+            </button>
+
+            <button class="btn btn-primary mr-3" type="button" (click)="cancelar()" routerLink="/investigadores-listar">Cancelar</button>
+
+        </div>
+    </form>
+
+</div>

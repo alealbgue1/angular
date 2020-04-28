@@ -1,5 +1,6 @@
 <div class="container mt-2">
     <ul>
-        <li *ngFor="let p of listaInv"><a routerLink="/investigadores-detalles/{{p.id}}">{{p.nombre}} {{p.apellidos}}</a></li>
+        <li *ngFor="let p of listaInv">
+            <figure></figure><a routerLink="/investigadores-detalles/{{p.id}}">{{p.nombre}} {{p.apellidos}}</a></li>
     </ul>
 </div>

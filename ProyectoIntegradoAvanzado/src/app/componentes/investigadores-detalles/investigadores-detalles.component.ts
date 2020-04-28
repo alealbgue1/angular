@@ -4,6 +4,7 @@ import { InvestigadorService } from 'src/app/services/investigador.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SucesosService } from 'src/app/services/sucesos.service';
 import { Fenomenos } from 'src/app/models/fenomenos';
+import { IfStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-investigadores-detalles',
@@ -14,8 +15,18 @@ export class InvestigadoresDetallesComponent implements OnInit {
 
   private arrInv: Inv;
 
+  private investigador: Inv[];
+
+  private del: boolean;
+
+  private mod: boolean;
+
   constructor(private servicioSucesos: SucesosService,private servicioInvestigadores: InvestigadorService, private route: ActivatedRoute, private ruta: Router) {
     this.arrInv = <Inv>{};
+
+    this.del = false;
+
+    this.mod = false;
    }
 
   ngOnInit() {
@@ -44,5 +55,42 @@ export class InvestigadoresDetallesComponent implements OnInit {
       })
     }
   }
+
+  borrarInv(datos){
+    console.log("Borrar", datos);
+
+    this.del = true;
+
+    this.investigador = datos;
+  }
+
+  actualizarBorrar(datos){
+    
+    if(datos){
+      this.ruta.navigate(['/investigadores-listar']);
+    }
+ 
+    this.del = false;
+   }
+
+  modInv(datos){
+    console.log("Modificar", datos);
+
+    this.mod = true;
+    
+    this.investigador = datos;
+  }
+
+  actualizarModificar(datos){
+
+    if(datos){
+      console.log(datos);
+      this.investigador = datos;
+    }
+
+    this.mod = false;
+  }
+
+  
 
 }

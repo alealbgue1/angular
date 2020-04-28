@@ -18,6 +18,8 @@ import { InvestigadorListadoComponent } from './componentes/investigador-listado
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { InvestigadoresDetallesComponent } from './componentes/investigadores-detalles/investigadores-detalles.component';
 import { FenomenosComponent } from './componentes/fenomenos/fenomenos.component';
+import { InvestigadorBorrarComponent } from './componentes/investigador-borrar/investigador-borrar.component';
+import { InvestigadorModComponent } from './componentes/investigador-mod/investigador-mod.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FenomenosComponent } from './componentes/fenomenos/fenomenos.component'
     InvestigadorListadoComponent,
     RegistroComponent,
     InvestigadoresDetallesComponent,
-    FenomenosComponent
+    FenomenosComponent,
+    InvestigadorBorrarComponent,
+    InvestigadorModComponent
   ],
   imports: [
     BrowserModule,

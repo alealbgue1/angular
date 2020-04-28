@@ -12,7 +12,7 @@ export const environment = {
 
 	API_URL: "http://localhost/ProyectoIntegrado/avanzado/services.php",
 
-	API_URL2: "http://localhost/ProyectoIntegrado/avanzado/servicios.php",
+	API_URL2: "http://localhost/ProyectoIntegrado/avanzado/servidor.php",
 
 	cabecera: function(){
 		let headers = { headers: new HttpHeaders({

@@ -15,6 +15,13 @@ export class SucesosService {
 
 	constructor(private http: HttpClient) { }
 	
+	listarFenomenos(){
+		var pa = JSON.stringify({
+			servicio: "ListarFenomenos"
+		});
+		return this.http.post<any>(this.url2, pa);
+	}
+
 	getFenomenosId(id){
 		var pa = JSON.stringify({
 			servicio: "ObtenerFenomenoIdInv",

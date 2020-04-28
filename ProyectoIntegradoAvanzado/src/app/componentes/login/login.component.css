@@ -1,0 +1,12 @@
+.cuerpo {
+    border: 1px black solid;
+    padding: 2em;
+    text-align: center;
+    margin-left: 30em;
+    margin-right: 30em;
+    margin-top: 4em;
+}
+
+form {
+    text-align: left;
+}

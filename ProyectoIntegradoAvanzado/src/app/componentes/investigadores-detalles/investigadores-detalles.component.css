@@ -1,0 +1,30 @@
+.body {
+    background-image: url(../../../assets/fondo.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    padding-bottom: 13em;
+}
+
+.contenido {
+    padding-top: 2em;
+    padding-left: 4em;
+    padding-right: 4em;
+    padding-bottom: 8em;
+}
+
+h1 {
+    float: left;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: white;
+    border: 1px solid black;
+    padding: 0.5em;
+}
+
+td {
+    color: black;
+}
+
+.boton {
+    padding: 2em 0 2em 0em;
+}

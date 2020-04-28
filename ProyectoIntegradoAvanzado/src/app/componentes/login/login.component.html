@@ -1,8 +1,5 @@
-<h4>
-    Identificación</h4>
-<div>
-    <p>Introduzca sus datos</p>
-    <p *ngIf="loginIncorrecto" class="text-danger">Usuario y/clave INCORRECTOS, por favor proceda de nuevo</p>
+<div class="cuerpo">
+    <p>LOGIN</p>
 
     <form class="form-horizontal" #loginForm="ngForm">
         <div class="form-group">
@@ -19,7 +16,7 @@
                 La clave es obligatoria
             </div>
         </div>
-
+        <p *ngIf="loginIncorrecto" class="text-danger">Usuario y/clave INCORRECTOS, por favor proceda de nuevo</p>
 
         <div>
             <button class="btn btn-primary mr-3" type="submit" [disabled]="!loginForm.valid" (click)="validar(loginForm.value)">

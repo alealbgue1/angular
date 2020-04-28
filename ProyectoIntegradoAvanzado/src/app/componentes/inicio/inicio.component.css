@@ -1,0 +1,66 @@
+.cuerpo {
+    background-image: url(../../../assets/fondo.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+#contenido {
+    float: left;
+    width: 70%;
+}
+
+.fenomeno {
+    border: 1px black solid;
+    padding: 2em;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-bottom: 6em;
+}
+
+.fenomeno p {
+    text-align: justify;
+}
+
+aside {
+    float: right;
+    width: 20%;
+}
+
+aside nav {
+    position: fixed;
+    border-bottom: 2px #C7BEBE solid;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    margin-left: 6em;
+}
+
+aside nav ul li {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 2em;
+    padding-top: 0em;
+    list-style-position: outside;
+    list-style: none;
+    margin-left: -1em;
+}
+
+aside a {
+    text-decoration: none;
+    color: #A61B3E;
+}
+
+aside h2 {
+    color: white;
+    font-family: 'Alex Brush', cursive;
+    font-size: 26pt;
+    text-shadow: 2px 2px 4px #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+    border-bottom: 3px #C7BEBE solid;
+}
+
+aside nav ul li a {
+    display: inline-block;
+    margin-bottom: 1em;
+    top: 0px;
+    margin-top: 0.5em;
+    margin-left: 5px;
+}

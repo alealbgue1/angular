@@ -36,10 +36,11 @@ export class InvestigadorService {
 	}
 
 	modificar(inv){
-		let pa = JSON.parse(JSON.stringify(inv));
-		//  Le añadimos el nuevo atributo, servicio:
-		pa.servicio = "modificar";
-		return this.http.post<any>(this.url, JSON.stringify(pa), environment.cabecera());
+		var pa = JSON.stringify({
+			servicio: "ModificaInv",
+			inv: inv
+		  });
+		  return this.http.post<any>(this.url, pa, environment.cabecera());
 	}
 
 	getDetallesInv(id){
@@ -52,7 +53,7 @@ export class InvestigadorService {
 
 	borrar(id){
 		let pa = JSON.stringify({
-			servicio: "borrar",
+			servicio: "BorraInv",
 			id: id
 		});
 		return this.http.post<any>(this.url, pa, environment.cabecera());
